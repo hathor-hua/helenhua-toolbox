@@ -14,10 +14,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4        # 更新從 v3 到 v4
       
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4      # 更新從 v3 到 v4
         with:
           node-version: 18
           
@@ -28,7 +28,7 @@ jobs:
         run: npm run build
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3  # 這個保持 v3 是正確的
         with:
           path: ./out
 
@@ -41,4 +41,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4    # 更新從 v2 到 v4
